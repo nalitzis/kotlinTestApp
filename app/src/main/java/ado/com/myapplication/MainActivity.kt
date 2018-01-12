@@ -25,8 +25,9 @@ class MainActivity : AppCompatActivity() {
             Log.d("MainActivity", "click")
             numOfClicks++
         })
+        nextButton = findViewById(R.id.nextActivityBtn)
         nextButton.setOnClickListener({
-            intent = Intent(this, SecondActivity::class.java)
+            intent = SecondActivity.Companion.newIntent(this, numOfClicks)
             startActivity(intent)
         })
 
